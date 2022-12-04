@@ -5,12 +5,16 @@ using UnityEngine;
 public class Cactus : MonoBehaviour
 {
     public GameObject cactus;
-    public float speed;
+    public float currentSpeed;
+    public float minSpeed;
+    public float maxSpeed;
+
+    public float changeSpeed;
     // Update is called once per frame
 
     private void Awake()
     {
-        
+        currentSpeed = minSpeed;
         CreateCactus();
     }
 
@@ -22,7 +26,10 @@ public class Cactus : MonoBehaviour
     }    
     void Update()
     {
-        
+        if (currentSpeed < maxSpeed)
+        {
+            currentSpeed += changeSpeed;
+                }    
     }
 
 }

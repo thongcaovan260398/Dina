@@ -10,7 +10,7 @@ public class MoveCactus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left * cactus.speed * Time.deltaTime);
+        transform.Translate(Vector2.left * cactus.currentSpeed * Time.deltaTime*0.1f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
