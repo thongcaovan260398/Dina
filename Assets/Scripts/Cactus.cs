@@ -10,6 +10,8 @@ public class Cactus : MonoBehaviour
     public float maxSpeed;
 
     public float changeSpeed;
+    public float score;
+
     // Update is called once per frame
 
     private void Awake()
@@ -29,7 +31,9 @@ public class Cactus : MonoBehaviour
         if (currentSpeed < maxSpeed)
         {
             currentSpeed += changeSpeed;
-                }    
+        }
+
+        score = 20 * Time.deltaTime;
     }
 
 }

@@ -10,7 +10,7 @@ public class MoveCactus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left * cactus.currentSpeed * Time.deltaTime*0.1f);
+        transform.Translate(Vector2.left * cactus.currentSpeed * Time.deltaTime*0.5f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,5 +24,10 @@ public class MoveCactus : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Time.timeScale = 0;
+        }    
     }
 }
